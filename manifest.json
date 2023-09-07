@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "Unblur",
+  "description": "Helps you unblur everything on the page",
+  "version": "1.0",
+  "action": {
+    "default_popup": "index.html"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["/assets/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "js": ["scripts/unblur.ts"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
