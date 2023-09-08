@@ -1,6 +1,6 @@
-setTimeout(() => {
+export default function () {
   const allElementsArray = document.getElementsByTagName("*");
-  console.log(allElementsArray);
+
   for (let i = 0; i < allElementsArray.length; i += 1) {
     const currentElement = allElementsArray[i];
     if (currentElement.style) {
@@ -15,4 +15,4 @@ setTimeout(() => {
       );
     }
   }
-}, 1000);
+}
