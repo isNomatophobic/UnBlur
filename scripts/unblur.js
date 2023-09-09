@@ -1,4 +1,5 @@
-export default function () {
+chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+  if (!msg.action === "unblur") return;
   const allElementsArray = document.getElementsByTagName("*");
 
   for (let i = 0; i < allElementsArray.length; i += 1) {
@@ -15,4 +16,4 @@ export default function () {
       );
     }
   }
-}
+});
