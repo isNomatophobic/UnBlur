@@ -1,4 +1,4 @@
-chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function (msg) {
   if (!msg.action === "unblur") return;
   const allElementsArray = document.getElementsByTagName("*");
 
@@ -10,7 +10,6 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
       const blurIndex = filter.indexOf("blur");
 
       if (!filter || blurIndex === -1) continue;
-      console.log([currentElement]);
 
       currentElement.style.filter = filter.replace(
         filter.slice(blurIndex, filter.indexOf(")") + 1),
