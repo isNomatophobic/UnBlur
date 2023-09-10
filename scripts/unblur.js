@@ -19,6 +19,7 @@ chrome.runtime.onMessage.addListener(function (msg) {
         }
         i++;
       }
+
       const newFilter = filter.replace(
         filter.slice(blurIndex, blurIndexEnd),
         ""
