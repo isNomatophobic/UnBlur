@@ -11,10 +11,19 @@ chrome.runtime.onMessage.addListener(function (msg) {
 
       if (!filter || blurIndex === -1) continue;
 
-      currentElement.style.filter = filter.replace(
-        filter.slice(blurIndex, filter.indexOf(")") + 1),
+      let blurIndexEnd = undefined;
+      let i = 0;
+      while (!blurIndexEnd && i < filter.length) {
+        if (filter[i] === ")" && i > blurIndex) {
+          blurIndexEnd = i + 1;
+        }
+        i++;
+      }
+      const newFilter = filter.replace(
+        filter.slice(blurIndex, blurIndexEnd),
         ""
       );
+      currentElement.style.filter = newFilter.length ? newFilter : "initial";
     }
   }
 });
