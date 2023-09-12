@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener(function (msg) {
   if (!msg.action === "unblur") return;
   const allElementsArray = document.getElementsByTagName("*");
-
+  let unblurredCount = 0;
   for (let i = 0; i < allElementsArray.length; i += 1) {
     const currentElement = allElementsArray[i];
     if (currentElement.style) {
@@ -25,6 +25,23 @@ chrome.runtime.onMessage.addListener(function (msg) {
         ""
       );
       currentElement.style.filter = newFilter.length ? newFilter : "initial";
+      unblurredCount += 1;
     }
   }
+  renderAlert(unblurredCount);
 });
+function renderAlert(unblurredCount) {
+  const alert = document.createElement("div");
+  alert.innerHTML = unblurredCount
+    ? `${unblurredCount} items unblured!`
+    : "No accessible blurred items found ";
+
+  alert.className = "unblurJS-alert";
+  setTimeout(() => {
+    alert.style.opacity = 0;
+    setTimeout(() => {
+      alert.remove();
+    }, 300);
+  }, 3000);
+  document.querySelector("body").appendChild(alert);
+}

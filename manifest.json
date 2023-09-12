@@ -10,6 +10,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
+      "css": ["assets/alert.css"],
       "js": ["scripts/unblur.js"]
     }
   ],
