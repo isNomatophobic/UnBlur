@@ -1,5 +1,6 @@
 chrome.runtime.onMessage.addListener(function (msg) {
   if (!msg.action === "unblur") return;
+
   const allElementsArray = document.getElementsByTagName("*");
   let unblurredCount = 0;
   for (let i = 0; i < allElementsArray.length; i += 1) {
