@@ -2,10 +2,12 @@
   display: flex;
   justify-content: center;
   background: #303134;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: #f2f3f4;
   align-items: center;
   font-weight: 500;
   position: fixed;
+  font-size: 16px;
   bottom: 10px;
   left: 10px;
   padding: 10px 20px;

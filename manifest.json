@@ -5,7 +5,12 @@
   "description": "Helps you unblur everything on the page",
   "version": "1.0",
   "action": {
-    "default_title": "Unblur all content"
+    "default_title": "Unblur all content",
+    "default_icon": "./assets/icon128.png"
+  },
+  "icons": {
+    "128": "./assets/icon128.png",
+    "48": "./assets/icon48.png"
   },
   "content_scripts": [
     {
