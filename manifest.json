@@ -3,7 +3,7 @@
   "name": "Unblur",
   "author": "Kristian Petrov",
   "description": "Helps you unblur everything on the page",
-  "version": "1.0",
+  "version": "1.1",
   "action": {
     "default_title": "Unblur all content",
     "default_icon": "./assets/icon128.png"
